@@ -1,2 +1,3 @@
 # rock-paper-scissors
-Fancy a game of Rock-Paper-Scissors?
+
+Fancy a game of **Rock-Paper-Scissors**?
