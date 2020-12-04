@@ -1,0 +1,21 @@
+{
+  "name": "rock-paper-scissors",
+  "version": "1.0.0",
+  "description": "Simple game of Rock-Paper-Scissors",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch src/sass:dist/css",
+    "tsc": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-sad-philosopher/rock-paper-scissors.git"
+  },
+  "author": "The-philosopher",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/The-sad-philosopher/rock-paper-scissors/issues"
+  },
+  "homepage": "https://github.com/The-sad-philosopher/rock-paper-scissors#readme"
+}
