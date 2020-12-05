@@ -1,3 +1,8 @@
+@charset "UTF-8";
+/** Importing Exo Font **/
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap");
+/** Color Palette 🎨 **/
+/** Fonts & related variables **/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -352,6 +357,12 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/** Global level rules **/
+:root {
+  font-family: "Exo", Helvetica, Arial, sans-serif;
+  font-size: 16px;
 }
 
 /*# sourceMappingURL=main.css.map */

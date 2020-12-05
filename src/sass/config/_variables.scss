@@ -1,0 +1,16 @@
+/** Color Palette 🎨 **/
+
+$colors: (
+  background: hsl(177, 100%, 14%),
+  headline: hsl(60, 100%, 100%),
+  paragraph: hsl(163, 29%, 75%),
+  highlight: hsl(36, 93%, 68%),
+  primary-dark: hsl(178, 100%, 6%),
+  primary-light: hsl(330, 8%, 90%),
+  tertiary: hsl(360, 68%, 63%),
+);
+
+/** Fonts & related variables **/
+
+$font-fallback: ("Exo", Helvetica, Arial, sans-serif);
+$font-size-default: 16px;
