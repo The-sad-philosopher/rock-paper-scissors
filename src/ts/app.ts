@@ -6,7 +6,7 @@ const choices = ['rock', 'paper', 'scissor'];
 let player: Player = {
   name: 'Tom',
   selection: {
-    value: 'rock',
+    value: 'scissor',
     index: 0,
   },
 };
@@ -43,14 +43,12 @@ function getWinner(playerOne: Player, playerTwo: Player) {
   const indexDifference = Math.abs(
     playerOne.selection.index - playerTwo.selection.index
   );
-  // console.log(`Index Diff is ${indexDifference}`);
   /**
    ** Logic being that ['rock', 'paper', 'scissor'] being in the order they are,
    **  are in a way, that (n+1) always beats n, for instance, paper beats rock &
    **  scissor beats paper. The only other remaining case is n & (n+2) in which
    **  n wins; i.e. rock and scissor where rock beats scissor.
    **/
-
   if (!indexDifference) {
     result = `It's a Tie.`;
   } else if (indexDifference === 1) {
