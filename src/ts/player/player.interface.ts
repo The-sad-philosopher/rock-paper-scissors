@@ -1,5 +1,5 @@
 interface Player {
-  readonly id: number;
+  readonly id: string;
   readonly name: string;
   selection: [value: string, index: number];
   score: number;
