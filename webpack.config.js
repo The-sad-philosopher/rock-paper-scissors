@@ -12,7 +12,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js', '.module.ts', '.interface.ts'],
   },
   output: {
     filename: 'bundle.js',
