@@ -14,3 +14,5 @@ class Player implements IPlayer {
     if (playerTwo) playerTwo.score++;
   }
 }
+
+export default Player;
