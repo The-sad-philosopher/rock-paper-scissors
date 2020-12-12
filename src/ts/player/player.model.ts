@@ -9,7 +9,7 @@ class Player implements IPlayer {
     public selection: IPlayer['selection']
   ) {}
 
-  incrementPlayerScore(player: IPlayer, playerTwo?: IPlayer) {
+  static incrementPlayerScore(player: IPlayer, playerTwo?: IPlayer) {
     player.score++;
     if (playerTwo) playerTwo.score++;
   }
