@@ -20,12 +20,13 @@ class Player implements IPlayer {
     let choice = prompt(`Enter your choice, ${this.name}.`);
     if (choice) {
       choice = choice.toLowerCase();
-      if (!Game.choices.includes(choice)) {
+      if (Game.choices.includes(choice)) {
+        const index = Game.choices.indexOf(choice);
+        this.selection = [choice, index];
+      } else {
         console.log(`Invalid choice. Try again...`);
         this.getPlayerChoice();
       }
-      const index = Game.choices.indexOf(choice);
-      this.selection = [choice, index];
     }
   }
 }
