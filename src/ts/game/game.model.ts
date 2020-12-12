@@ -1,5 +1,7 @@
 import IPlayer from '../player/player.interface';
 import IGame from './game.interface';
+import Player from '../player/player.model';
+import Computer from '../player/computer.model';
 
 class Game implements IGame {
   static choices = ['rock', 'paper', 'scissor'];
@@ -36,17 +38,18 @@ class Game implements IGame {
     const winner = this.getWinner([playerOne, playerTwo]);
     if (winner.length === 1) {
       console.log(`${winner[0].name} wins.`);
-      winner[0].score++;
+      Player.incrementPlayerScore(winner[0]);
     } else {
       console.log(`It's a tie.`);
-      winner[0].score++;
-      winner[1].score++;
+      Player.incrementPlayerScore(winner[0], winner[1]);
     }
     console.log(`${playerOne.name}'s score: ${playerOne.score}`);
     console.log(`${playerTwo.name}'s score: ${playerTwo.score}`);
   }
-  playGame([playerOne, playerTwo]: [IPlayer, IPlayer]) {
+  playGame([playerOne, playerTwo]: [IPlayer, Computer]) {
     while (playerOne.score < 5 && playerTwo.score < 5) {
+      playerOne.getPlayerChoice();
+      playerTwo.getRandomChoice();
       this.round++;
       this.playRound([playerOne, playerTwo]);
     }
