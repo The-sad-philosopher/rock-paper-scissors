@@ -45,13 +45,19 @@ class Game implements IGame {
     console.log(`${playerOne.name}'s score: ${playerOne.score}`);
     console.log(`${playerTwo.name}'s score: ${playerTwo.score}`);
   }
-  playGame(players: [IPlayer, IPlayer]) {
-    /**
-     * 1. keep track of player scores
-     * 2. keep playing rounds till a player
-     *      achieves a minimum score of 5
-     * 3. declare winner
-     */
+  playGame([playerOne, playerTwo]: [IPlayer, IPlayer]) {
+    while (playerOne.score < 5 && playerTwo.score < 5) {
+      this.round++;
+      this.playRound([playerOne, playerTwo]);
+    }
+    console.log(`Game over.`);
+    console.log(`Final scores:`);
+    console.log(`${playerOne.name}: ${playerOne.score}`);
+    console.log(`${playerTwo.name}: ${playerTwo.score}`);
+    const winnerName =
+      playerOne.score > playerTwo.score ? playerOne.name : playerTwo.name;
+    console.log(`${winnerName} wins the game.`);
+    console.log(`Wanna play again?...`);
   }
 }
 
