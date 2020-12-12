@@ -5,7 +5,7 @@ class Game implements IGame {
   static choices = ['rock', 'paper', 'scissor'];
   round: number = 0;
 
-  playRound([playerOne, playerTwo]: [IPlayer, IPlayer]) {
+  getWinner([playerOne, playerTwo]: [IPlayer, IPlayer]) {
     let winner: IPlayer[];
     const indexDifference = Math.abs(
       playerOne.selection[1] - playerTwo.selection[1]
@@ -28,6 +28,22 @@ class Game implements IGame {
           : [playerTwo];
     }
     return winner;
+  }
+  playRound([playerOne, playerTwo]: [IPlayer, IPlayer]) {
+    console.log(`Round ${this.round}:`);
+    console.log(`${playerOne.name}'s choice: ${playerOne.selection[0]}`);
+    console.log(`${playerTwo.name}'s choice: ${playerTwo.selection[0]}`);
+    const winner = this.getWinner([playerOne, playerTwo]);
+    if (winner.length === 1) {
+      console.log(`${winner[0].name} wins.`);
+      winner[0].score++;
+    } else {
+      console.log(`It's a tie.`);
+      winner[0].score++;
+      winner[1].score++;
+    }
+    console.log(`${playerOne.name}'s score: ${playerOne.score}`);
+    console.log(`${playerTwo.name}'s score: ${playerTwo.score}`);
   }
   playGame(players: [IPlayer, IPlayer]) {
     /**
